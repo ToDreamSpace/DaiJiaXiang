@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<title>戴家巷公园</title>
+		<link rel="stylesheet" type="text/css" href="__HOME_CSS__/main.css"/>
+	</head>
+	<body>
+		<div id="logo" onclick="showIntro()">
+			<img width="100%" src="__HOME_IMG__/logo.png" alt="戴家巷">
+		</div>
+		
+		<div id="leftSide">
+			<img id="drec" width="100%" src="__HOME_IMG__/derc.png" >
+			<img id="daohang" width="100%" src="__HOME_IMG__/daohang.png" >
+		</div>
+		
+		<!-- 简介 -->
+		<div id="inTroLayer">
+			<div id="shutDown" onclick="shutDownIntro()" >
+				<img width="100%" src="__HOME_IMG__/shutdow.png" >
+			</div>
+			<div id="sceneName" data-sceneid='{$sceneID}'>{$title}</div>
+			<div id="content">
+				<img id="scenePic" width="100%" height=""  src={$picAdd} >
+				<div id="textIntroduction">{$textIntro|raw} </div>
+			</div>
+			<div id="buttons">
+				<audio id="sceneVoice" src={$voice} >
+					当前浏览器不支持audio
+				</audio>
+			</div>
+		</div>
+		
+		<!-- 获取地图信息的   最后删除-->
+		<div id="pointsget"  style="display: none;position: absolute;top:280px;">
+			<input type="text" name="" id="u"/>
+			<input type="text" name="" id='v'/>
+			<button id="pointsgetbutton">保存</button>
+			<div style="background: black;color:white;font-size: smaller;" id="info">
+				
+			</div>
+		</div>
+		
+		
+		<!--路线-->
+		<div id="luxian">
+				<select id="start" name="start">			
+				</select>
+				<select id="end" name="end">			
+				</select>
+				<div id="luxianbutton">
+					查看路线
+				</div>
+		</div>
+		
+		<div id="voiceCtl">
+			<img width="100%" src="static/home/img/audio0.png" >
+		</div>
+		
+		
+		
+		
+		<!-- 访问量 -->
+		<div id="viewNumOut">
+			<img id="smallLogo" width="3%" src="__HOME_IMG__/cq.png" >
+			<div id="viewNum">
+				
+			</div>
+		</div>
+	</body>
+</html>
+<script src="__HOME_JS__/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__HOME_JS__/three.js" type="text/javascript" charset="utf-8"></script>
+<script src="__HOME_JS__/OrbitControls.js" type="text/javascript" charset="utf-8"></script>
+<script src="__HOME_JS__/GLTFLoader.js" type="text/javascript" charset="utf-8"></script>
+<script src="__HOME_JS__/astar.js" type="text/javascript" charset="utf-8"></script>
+<script src="__HOME_JS__/lijie.js" type="text/javascript" charset="utf-8"></script>

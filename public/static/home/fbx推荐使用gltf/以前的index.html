@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!--	<meta target-densitydpi />-->
+  <meta charset="utf-8">
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta content="email=no" name="format-detection">
+  <title>重庆戴家巷-崖壁公园DaijiaAlleyCliffPark</title>
+  <style>
+	
+	select{ 
+		-webkit-appearance: none; 
+	}
+    body {
+      margin: 0;
+      overflow: hidden;
+      /* 隐藏body窗口区域滚动条 */
+    }
+   	
+   	#left{
+   		position: fixed;
+   		padding: 20px;
+   		width: 12%;
+   	}
+   	#daohao{
+   		margin-top: 8px;
+   	}
+    #right{
+    	position: fixed;
+    	right: 10px;
+    	top: 10px;
+    	width: 15%;
+    }
+    #jianjie{
+    	position: fixed;
+    	top: 15%;
+    	left: 10%;
+    	width: 80%;
+    	height: 70%;
+    	overflow:scroll;
+    	border-radius: 6px;
+    	border: solid lightblue 3px;
+    	background: white;
+    }
+    
+    #title{
+    	padding:10px;
+    	font-weight: bolder;
+    	width:75%;
+    	position: fixed;
+    	background:lightblue ;
+    }
+    #neirong{
+    	margin-top: 5px;
+    }
+    #bottom{
+    	color: grey;
+    	font-size:small;
+    	background: white;
+    	padding:2px;
+    	padding-left: 10px;
+    	padding-bottom: 5px;
+    	width: 100%;
+    	position: fixed;
+    	bottom: 0px;
+    }
+    #bottom-left,#bottom-right{
+    	display:inline-block;
+    	width: 40%;
+    }
+    #bottom-left img{
+    	width: 10%;
+    }
+    #luxian{
+    	display: none;
+    	width: 86%;
+    	height: 40%;
+    	position: fixed;
+    	top: 30%;
+    	left: 7%;
+    	border-radius: 10px;
+    	background: white;
+    	padding-top: 20px;
+    }
+    select{
+    	display: block;
+    	width:90%;
+    	height: 20%;
+    	border-radius: 10px;
+    	background: ghostwhite;
+    	border: 2px gainsboro solid;
+    	margin-top:5%;
+    	margin-left:auto;
+    	margin-right: auto;
+    }
+   	#button{
+   		padding: 4px;
+   		margin-left: auto;
+			margin-right: auto ;
+			margin-top: 10%;
+   		width: 80%;
+   		border-radius: 20px;
+   		background: dodgerblue;
+   		color: white;
+   		text-align: center;
+   		font-family: "微软雅黑";
+   		font-weight: bold;
+   	}
+   	img #img{
+   		width: 100%;
+   	}
+   	#shut{
+   		width: 78%;
+   		text-align: right;
+   		position: fixed;
+   		font-size:large;
+   		color: white;
+   	}
+	#audioIco{
+		position: absolute;
+		bottom: 25px;
+		width: 12%;
+		right: 3px;
+		
+	}
+	
+   	
+  </style>
+  <script src="__STATIC__/img/cgli.js"></script>
+  <script src="__STATIC__/img/cg-controls.js"></script>
+  <script src="__STATIC__/js/FBXLoader.js"></script>
+  <script src="__STATIC__/js/inflate.min.js"></script>
+  <script src="__STATIC__/img/astar.js"></script>
+  <!--<script src="__STATIC__/js/CanvasRenderer.js"></script>
+   <script src="__STATIC__/js/Projector.js"></script>-->
+<!--  <script src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>-->
+  <script src="__STATIC__/js/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+	<div style="position: fixed;width: 100%;text-align: center;font-size: small;color: gray;">操作说明：单手指旋转 双手指拖动或者放大</div>
+	<div id="left">
+		<div >
+			<img id="drec" width="100%" src="__STATIC__/img/derc.png" />
+		</div>
+		<div  id="daohao">
+			<img width="100%" src="__STATIC__/img/daohang.png" />
+		</div>
+	</div>
+	
+	<div id="right">
+		<div id="logo">
+			<img width="100%" src="__STATIC__/img/scene.png" />
+		</div>
+	</div>
+	
+	
+	<div id="audioIco">
+		<img id="audioIco1" width="100%" src="__STATIC__/img/audio0.png" >
+	</div>
+	
+	<audio id='voice' src="__STATIC__/voice/libai.mp3"></audio>
+	
+	<!--简介-->
+	<div id="jianjie" >
+		<div id="title">戴家巷-崖壁公园DaijiaAlleyCliffPark</div>
+		<img width="100%" id="img" src="https://www.todreamspace.com/3d/public/imgurl/7.jpg"/>
+		<div id="neirong">
+			<p>以崖为墙，固若金汤；嘉陵烟雨，崖壁栈道。 戴家巷崖壁公园位于重庆市渝中区嘉陵江畔，矗立在悬崖峭壁之上，与洪崖洞比邻而居，公园总面积约9800平方米，景观步道起于戴家巷老街延伸至嘉陵江畔，长约790米，其中悬空栈道300米，落差高达60米左右。 依山攀登山城步道，进入崖壁公园。崖腰与古巴渝十二景“洪崖滴翠”近在咫尺，牵手洪崖洞，俯瞰嘉陵江，远眺江北嘴，临崖听江，以崖为墙，春夏秋冬，繁花似锦，自然成趣。 崖壁公园内，可寻踪重庆老城墙。重庆古城墙大多建在悬崖上，形成国内外独一无二的奇观。其中最险要的，莫过于戴家巷崖壁公园这一段。洪崖城墙位于临江门和洪崖门之间，城墙绕过临江门后，从飞仙岩蜿蜒向东，崖壁奇陡，上下落差达60米左右。城墙下崖壁上留有明显的吊脚楼痕迹，飞仙岩上的石刻以及洒满阳光的洒金坡。 于城市最繁华之处，览古今重庆之美。 Impregnable the cliff wall was as the defensive systems in history; unforgettable the scenery around is along the plank road at present. Daijia Alley Cliff Park is located on the southern bank of the Jialing River in Yuzhong District, Southwest China’s Chongqing Municipality. Covering an area of about 9,800 square meters, it stands on a cliff, neighboring Hongyadong, a popular tourist destination in the downtown. Its plank road from the old street of Daijia Alley to the Jialing River bank extends 790 meters, among which 300-meter suspended has a height of about 60 meters. After the mountain trails comes the entrance into the cliff park, Hongyadong at its side. The park faces the Jialing River and the Jiangbeizui Central Business District across the river. Just immerse yourself in the natural beauty at the riverside viewing stand and sweep scenery around. In the cliff park, you can find the ancient city wall in Chongqing, most of which are built on cliffs, It is a spectacle of uniqueness and wonder of engineering at home and abroad. If you want to experience a place strategic and inaccessible in history, the Daijia Alley Cliff Park is a must-go. The Hongya City Wall as a scenic spot in the cliff park is located between the Linjiang Gate and the Hongya Gate. Next, when it comes to Feixian Cliff, another scenic spot, and eastward, the steepest section, about 60 meters in height, shows up. There are obvious traces of stilt houses on the cliff, Feixianyan with stone inscription and glittering Sajinpo. It will not let you down to explore the beauty of old Chongqing amid hustling and bustling.
+			</p>
+		</div>
+	</div>	
+	
+	<!--路线-->
+	<div id="luxian">
+			<select id="start" name="start">
+				<option value="0">洪崖城墙</option>
+				<option value="1">飞仙岩</option>
+				<option value="2">临崖听涛</option>
+				<option value="3">镇江寺</option>
+				<option value="4">吊脚楼</option>
+				<option value="5">洒金坡</option>
+				<option value="6">大汉烟厂</option>
+				<option value="7">五余同业</option>
+				<option value="8">危岩治理</option>
+				<option value="9">黄桷树</option>				
+			</select>
+			<select id="end" name="end">
+				<option value="0">洪崖城墙</option>
+				<option value="1">飞仙岩</option>
+				<option value="2">临崖听涛</option>
+				<option value="3">镇江寺</option>
+				<option value="4">吊脚楼</option>
+				<option value="5">洒金坡</option>
+				<option value="6">大汉烟厂</option>
+				<option value="7">五余同业</option>
+				<option value="8">危岩治理</option>
+				<option value="9">黄桷树</option>				
+			</select>
+			<div id="button">
+				查看路线
+			</div>
+	</div>
+	
+	
+	<div id="bottom">
+			<div id="bottom-left">
+					<img width="100%" src="__STATIC__/img/person.png"/>
+					<span id="today">
+						今日客流：...
+					</span>
+			</div>
+			<div id="bottom-right">
+					<span id="total">
+						累计客流：...   
+					</span>
+			</div>
+	</div>
+	
+	
+	<script src="__STATIC__/img/main.min.js"></script>
+	
+		
+	<!--设置地图使用的坐标，后期删除-->
+	<!--<form id="zuobiao" style="position: fixed;top:5%;left: 20%;display: none;">
+		设置地图使用的坐标，后期删除
+		  <input type="text" name="i" value="" />
+		  <input type="text" name="j" value="" />
+		  <input type="button" name="button" value="确定"  />
+	</form>-->
+
+	<audio id='voice' src="__STATIC__/voice/libai.mp3"></audio>
+	
+</body>
+</html>
+
+<script type="text/javascript">
+		//请求访问数据
+		$.ajax({
+			type: "GET",
+			async: true,
+			url: "https://www.todreamspace.com/3d/public/index.php/chaxunfangwen",
+			success: function(data) {
+				var res = JSON.parse(data);
+				$("#today").text("今日客流："+res.today);
+				$("#total").text("累计客流："+res.total);
+		}
+		});
+		
+		//导航按钮
+		var daohang=document.getElementById("daohao");
+		var luxian=document.getElementById("luxian");
+		var zhuangtai=false;
+		var buttonX=document.getElementById("button");
+		function kaiguan(){
+			if(!zhuangtai){
+					luxian.style.display='block';	
+					zhuangtai=true;
+			}else{
+					luxian.style.display='none';
+					zhuangtai=false;
+			}
+		}
+		daohang.addEventListener("click",kaiguan);
+		buttonX.addEventListener("click",kaiguan);
+		
+		
+</script>
+
+<script src="img/createMap.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- 解决苹果select之后不弹回来 -->
+<script>
+	var u = navigator.userAgent, app = navigator.appVersion
+	var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+	$(document).ready(function(){
+		$("select").blur(function(){
+			if (isIOS) {
+				blurAdjust()
+				// alert("1231321233")
+			}
+		});
+	});
+	// 解决苹果不回弹页面
+	function blurAdjust(e){
+		setTimeout(()=>{
+			// alert("1231321233")
+			if(document.activeElement.tagName == 'select'){
+				return
+			}
+			let result = 'pc';
+			if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) { //判断iPhone|iPad|iPod|iOS
+					result = 'ios'
+			}else if(/(Android)/i.test(navigator.userAgent)) {  //判断Android
+					result = 'android'
+			}
+			
+			if( result = 'ios' ){
+				document.activeElement.scrollIntoViewIfNeeded(true);
+			}
+		},100)
+	}
+</script>
